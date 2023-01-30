@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  # Django application   
+  app:
+    build: .
+    volumes:
+      - .:/zappit
+    ports:
+      - 8000:8000
+    image: zappit:django
+    container_name: zappit_app
+    command: python manage.py runserver 0.0.0.0:8000
